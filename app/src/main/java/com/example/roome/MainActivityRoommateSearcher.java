@@ -17,8 +17,6 @@ import com.example.roome.Roommate_searcher_tabs_classes.MatchesRoommateSearcher;
 import com.example.roome.Roommate_searcher_tabs_classes.RoommateSearcherHome;
 import com.example.roome.user_classes.RoommateSearcherUser;
 import com.google.android.material.tabs.TabLayout;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
@@ -30,7 +28,6 @@ import java.util.Set;
 //todo: documention :/
 public class MainActivityRoommateSearcher extends AppCompatActivity {
 
-    public static RoommateSearcherUser rUser; //todo we need this?
 
     private static final int OFFSCREEN_PAGE_LIMIT = 3;
     private TabLayout tabLayout;
@@ -57,7 +54,6 @@ public class MainActivityRoommateSearcher extends AppCompatActivity {
         // Initialize Firebase
         firebaseDatabase = FirebaseDatabase.getInstance();
 
-        rUser = getCurrentRoommateSearcherUser(); //todo we need this?
         allLists = new HashMap<>();
 
         viewPager = (CustomViewPager) findViewById(R.id.viewpager_roomate);

@@ -353,10 +353,131 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="15dp"
-                app:layout_constraintBottom_toTopOf="@+id/et_enter_first_name"
+                app:layout_constraintBottom_toTopOf="@+id/tv_is_kosher_important_rm"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/et_apartment_rent"
+                app:srcCompat="@drawable/ic_seperating_line" />
+
+            <TextView
+                android:id="@+id/tv_is_kosher_important_rm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/things_i_care_about"
+                android:textColor="@android:color/secondary_text_light"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_sep_line5" />
+
+            <CheckBox
+                android:id="@+id/check_box_smoking_rm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:buttonTint="@color/peach"
+                android:text="@string/smoking_free"
+                android:textColor="@android:color/secondary_text_light"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_is_kosher_important_rm" />
+
+
+
+            <ImageView
+                android:id="@+id/iv_smoking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_smoke_free_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/check_box_smoking_rm"
+                app:layout_constraintStart_toEndOf="@+id/check_box_smoking_rm"
+                app:layout_constraintTop_toBottomOf="@+id/tv_is_kosher_important_rm"
+                app:layout_constraintTop_toTopOf="@+id/check_box_smoking_rm" />
+
+            <CheckBox
+                android:id="@+id/check_box_pets_rm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:buttonTint="@color/peach"
+                android:text="@string/no_pets"
+                android:textColor="@android:color/secondary_text_light"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_smoking"
+                app:layout_constraintTop_toBottomOf="@+id/tv_is_kosher_important_rm" />
+
+            <ImageView
+                android:id="@+id/iv_pets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_pets_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/check_box_pets_rm"
+                app:layout_constraintStart_toEndOf="@+id/check_box_pets_rm"
+                app:layout_constraintTop_toTopOf="@+id/check_box_pets_rm" />
+
+            <CheckBox
+                android:id="@+id/check_box_ac_rm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:buttonTint="@color/peach"
+                android:text="@string/ac"
+                android:textColor="@android:color/secondary_text_light"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/cl_filters"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/check_box_smoking_rm" />
+
+            <ImageView
+                android:id="@+id/iv_ac"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_ac_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/check_box_ac_rm"
+                app:layout_constraintStart_toEndOf="@+id/check_box_ac_rm"
+                app:layout_constraintTop_toTopOf="@+id/check_box_ac_rm" />
+
+            <CheckBox
+                android:id="@+id/check_box_kosher_rm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="69dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:buttonTint="@color/peach"
+                android:text="@string/kosher"
+                android:textColor="@android:color/secondary_text_light"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/cl_filters"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_ac"
+                app:layout_constraintTop_toBottomOf="@id/check_box_pets_rm" />
+
+            <ImageView
+                android:id="@+id/iv_kosher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_kitchen_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/check_box_kosher_rm"
+                app:layout_constraintStart_toEndOf="@+id/check_box_kosher_rm"
+                app:layout_constraintTop_toTopOf="@+id/check_box_kosher_rm" />
+
+            <ImageView
+                android:id="@+id/iv_sep_line6"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/et_enter_first_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_kosher"
                 app:srcCompat="@drawable/ic_seperating_line" />
 
             <EditText
@@ -377,7 +498,7 @@
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/cl_details"
-                app:layout_constraintTop_toBottomOf="@+id/iv_sep_line5" />
+                app:layout_constraintTop_toBottomOf="@+id/iv_sep_line6" />
 
             <EditText
                 android:id="@+id/et_enter_last_name"
@@ -497,7 +618,7 @@
                 android:capitalize="sentences"
                 android:fontFamily="sans-serif"
                 android:gravity="start|center_horizontal"
-                android:hint="Some words about myself..."
+                android:hint="@string/some_words_about_myself"
                 android:includeFontPadding="false"
                 android:inputType="textMultiLine|textImeMultiLine"
                 android:maxLines="7"
@@ -513,7 +634,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:onClick="addPhotos"
                 android:text="ADD PHOTO"
                 app:icon="@drawable/ic_add_black_24dp"
                 app:iconTint="@color/peach"

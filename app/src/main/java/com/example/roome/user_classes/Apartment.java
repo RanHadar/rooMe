@@ -17,6 +17,9 @@ public class Apartment {
     private String entryDate;
     private int numberOfRoommates;
     private double rent;
+    private boolean isSmokingFree;
+    private boolean hasNoPets;
+    private boolean hasAC;
 
     private int minRoommatesAge;
     private int maxRoommatesAge;
@@ -71,10 +74,22 @@ public class Apartment {
     }
 
     public int getMaxRoommatesAge() {
-        if (maxRoommatesAge ==0 ){
+        if (maxRoommatesAge == 0) {
             return MAX_ROOMMATE_AGE;
         }
         return maxRoommatesAge;
+    }
+
+    public boolean isSmokingFree() {
+        return isSmokingFree;
+    }
+
+    public boolean isHasAC() {
+        return hasAC;
+    }
+
+    public boolean isHasNoPets() {
+        return hasNoPets;
     }
 
     //------------------------------------------Setters---------------------------------------------
@@ -106,5 +121,17 @@ public class Apartment {
 
     public void setMaxRoommatesAge(int maxRoommatesAge) {
         this.maxRoommatesAge = maxRoommatesAge;
+    }
+
+    public void setSmokingFree(boolean smokingFree) {
+        isSmokingFree = smokingFree;
+    }
+
+    public void setHasNoPets(boolean hasNoPets) {
+        this.hasNoPets = hasNoPets;
+    }
+
+    public void setHasAC(boolean hasAC) {
+        this.hasAC = hasAC;
     }
 }

@@ -402,14 +402,10 @@ public class FirebaseMediate {
     public static String RoommateInApartmentSearcherPrefsList(String aptUid,
                                                               String roommateUid) {
         ArrayList<String> likedArr, maybeArr, unlikedArr, notSeenArr;
-        likedArr = FirebaseMediate.getAptPrefList(ChoosingActivity.YES_TO_HOUSE,
-                aptUid);
-        maybeArr = FirebaseMediate.getAptPrefList(ChoosingActivity.MAYBE_TO_HOUSE,
-                aptUid);
-        unlikedArr = FirebaseMediate.getAptPrefList(ChoosingActivity.NO_TO_HOUSE,
-                aptUid);
-        notSeenArr = FirebaseMediate.getAptPrefList(ChoosingActivity.NOT_SEEN,
-                aptUid);
+        likedArr = getAptPrefList(ChoosingActivity.YES_TO_HOUSE, aptUid);
+        maybeArr = getAptPrefList(ChoosingActivity.MAYBE_TO_HOUSE, aptUid);
+        unlikedArr = getAptPrefList(ChoosingActivity.NO_TO_HOUSE, aptUid);
+        notSeenArr = getAptPrefList(ChoosingActivity.NOT_SEEN, aptUid);
         if (likedArr.contains(roommateUid)) {
             return ChoosingActivity.YES_TO_HOUSE;
         }
@@ -459,6 +455,6 @@ public class FirebaseMediate {
         }
         return ChoosingActivity.NOT_IN_LISTS;
     }
-    
+
 
 }
