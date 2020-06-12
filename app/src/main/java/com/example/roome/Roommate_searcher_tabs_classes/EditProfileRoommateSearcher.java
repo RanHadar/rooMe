@@ -210,7 +210,7 @@ public class EditProfileRoommateSearcher extends Fragment {
     }
 
     void addValueEventListenerToFirebaseUserReference() {
-        firebaseDatabaseReference.addValueEventListener(new ValueEventListener() {
+        userFirebaseDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 roommateSearcherUser = FirebaseMediate.getRoommateSearcherUserByUid(MyPreferences.getUserUid(getContext()));

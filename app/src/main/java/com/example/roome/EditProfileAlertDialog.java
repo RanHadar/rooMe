@@ -13,7 +13,7 @@ public class EditProfileAlertDialog extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(null);
         setContentView(R.layout.activity_edit_profile_alert_dialog);
     }
 
