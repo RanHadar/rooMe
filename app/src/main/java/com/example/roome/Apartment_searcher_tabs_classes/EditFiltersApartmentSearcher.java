@@ -22,13 +22,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
-import com.example.roome.ChoosingActivity;
 import com.example.roome.FirebaseMediate;
 import com.example.roome.MainActivityApartmentSearcher;
 import com.example.roome.MyPreferences;
 import com.example.roome.R;
 import com.example.roome.user_classes.ApartmentSearcherUser;
-import com.example.roome.user_classes.RoommateSearcherUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -101,6 +99,42 @@ public class EditFiltersApartmentSearcher extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.activity_filter_apartment_searcher_dialog, container, false);
+    }
+
+    /**
+     * The method calls all necessary methods in charge of initializing the fragment with all
+     * relevant data stored in the firebase and handling change in them made by the user. The
+     * method also allows to save updated data to the firebase.
+     * @param savedInstanceState the saved instance state
+     */
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        //save filters button
+        handleSaveButton();
+
+        //cost range
+        handleMinCost();
+        handleMaxCost();
+
+        //location selection
+        handleChosenLocation();
+
+        //entry date selection
+        handleDate();
+
+        //max num roommates selection
+        handleMaxRoommates();
+
+        //roommates' age selection
+        handleMinAge();
+        handleMaxAge();
+
+        //Things i care about selection
+        addOnClickToCheckBoxes();
+
+        super.onActivityCreated(savedInstanceState);
+        asUser = FirebaseMediate.getApartmentSearcherUserByUid(MyPreferences.getUserUid(getContext()));
+        setFiltersValuesFromDataBase();
     }
 
     /**
@@ -529,41 +563,7 @@ public class EditFiltersApartmentSearcher extends DialogFragment {
         });
     }
 
-    /**
-     * The method calls all necessary methods in charge of initializing the fragment with all
-     * relevant data stored in the firebase and handling change in them made by the user. The
-     * method also allows to save updated data to the firebase.
-     * @param savedInstanceState the saved instance state
-     */
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        //save filters button
-        handleSaveButton();
 
-        //cost range
-       handleMinCost();
-       handleMaxCost();
-
-        //location selection
-        handleChosenLocation();
-
-        //entry date selection
-        handleDate();
-
-        //max num roommates selection
-        handleMaxRoommates();
-
-        //roommates' age selection
-        handleMinAge();
-        handleMaxAge();
-
-        //Things i care about selection
-        addOnClickToCheckBoxes();
-
-        super.onActivityCreated(savedInstanceState);
-        asUser = FirebaseMediate.getApartmentSearcherUserByUid(MyPreferences.getUserUid(getContext()));
-        setFiltersValuesFromDataBase();
-    }
 
     /**
      * Sets the checked locations (location user chose) to true in the checkedLocations list
